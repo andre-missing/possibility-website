@@ -1,0 +1,29 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy to Vercel
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Vercel GitHub Integration handles the actual deployment automatically.
+      # This workflow serves as documentation and can be extended with
+      # post-deployment checks (e.g., lighthouse, smoke tests) if needed.
+      #
+      # Prerequisites:
+      # 1. Connect the GitHub repository to Vercel via https://vercel.com/new
+      # 2. Vercel will automatically deploy on push to main
+      # 3. Preview deployments are created for pull requests
+
+      - name: Deployment triggered
+        run: |
+          echo "Push to main detected."
+          echo "Vercel GitHub Integration will handle the production deployment."
+          echo "Check https://vercel.com/dashboard for deployment status."
